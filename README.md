@@ -1,3 +1,3 @@
 # python_rabbitmq_multiprocessing_crawl
-大表提
-============
+use python,rabbitmq,multiprocessing,casperjs for crawling<br/>
+士大夫
