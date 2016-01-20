@@ -11,6 +11,10 @@ use python,rabbitmq,multiprocessing,casperjs for crawling<br/>
 最初是利用xmlrpc读取和写入数据到openerp（数据库,postgresql）<br/>
 为方便查看,修改了,这里用txt和excel<br/>
 
+    欢迎到访
+    很高兴见到您
+    祝您，早上好，中午好，下午好，晚安
+
 安装：<br/>
 	`#install casperjs test on ubuntu 14.04`
 	`#casperjs 1.1.0 phantomjs 1.9.0`
