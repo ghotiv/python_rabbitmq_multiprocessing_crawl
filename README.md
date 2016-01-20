@@ -1,55 +1,70 @@
-# python_rabbitmq_multiprocessing_crawl
-use python,rabbitmq,multiprocessing,casperjs for crawling
 
- 大标题  
-==================================
-
-程序主要用来获取国际快递物流信息,
-用到技术：rabbitmq,casperjs,multiprocessing
-解决问题：
-		1.分布式爬虫
-		2.casperjs可以模拟浏览器获取数据,解决js加载数据,普通模块request获取不到的问题
-		3.multiprocessing可以利用多核
-	
-最初是利用xmlrpc读取和写入数据到openerp（数据库,postgresql）
-为方便查看,修改了,这里用txt和excel
-
-安装：
-	#install casperjs test on ubuntu 14.04
-	#casperjs 1.1.0 phantomjs 1.9.0
-	sudo apt-eget install phantomjs 
-	$ git clone git://github.com/n1k0/casperjs.git
-	$ cd casperjs
-	$ ln -sf `pwd`/bin/casperjs /usr/local/bin/casperjs
-	sudo pip install xlrd,xlwt
-	sudo apt-get install rabbitmq-server
-
-使用：
-	1.python receive_data.py  为rabbitmq消费者,用来接受和处理数据
-	2.python send_data.py  读取快递单,运输商等信息列表; 
-	3.python save_to_excel.py 读取success_data_***.txt的有效数据保存在excel,track_result.xls
-
-程序说明：
-	receive_data.py  ： 为rabbitmq消费者,用来接受和处理数据，可以部署多台机器
-	send_data.py       ： 读取快递单,运输商等信息列表
-	save_to_excel.py ： 读取success_data_***.txt的有效数据保存在excel,track_result.xls
-	my_rabbitmq.py  ： rabbitmq 主函数，收发数据
-	do_track.py            :   使用requests和casperjs获取,然后解析数据,调用multiprocessing
-	track_data.py       ： 常用变量，读写excel
-	my_process_pool.py :  记录multiprocessing异常日志
-	read_excel.py       ： 读写excel
-	track.js                     :  capsperjs调用函数
-	rpc_api.py              ：xmlrpc对接openerp的api
-	ftp_up.py                 :  将获取的json数据文件上传到php服务器
-	test_excel.py          :   读取保存excel文件测试
-	some_code.py       :    写过的一些函数片段
-	
-
-文档说明：
-	sample_import.xls      为测试源数据
-	error_data_***.txt      为出错数据
-	success_data_***.txt  为获取成功数据
-	track_***.log                处理数据日志
-
-要做的：
-	程序可以部署到网站上，导入快递基本信息excel后，输出快递详细信息的excel
+    大标题  
+    ===================================  
+      大标题一般显示工程名,类似html的\<h1\><br />  
+      你只要在标题下面跟上=====即可  
+      
+        
+    中标题  
+    -----------------------------------  
+      中标题一般显示重点项,类似html的\<h2\><br />  
+      你只要在标题下面输入------即可  
+        
+    ### 小标题  
+      小标题类似html的\<h3\><br />  
+      小标题的格式如下 ### 小标题<br />  
+      注意#和标题字符中间要有空格  
+      
+    ### 注意!!!下面所有语法的提示我都先用小标题提醒了!!!   
+      
+    ### 单行文本框  
+        这是一个单行的文本框,只要两个Tab再输入文字即可  
+              
+    ### 多行文本框    
+        这是一个有多行的文本框  
+        你可以写入代码等,每行文字只要输入两个Tab再输入文字即可  
+        这里你可以输入一段代码  
+      
+    ### 比如我们可以在多行文本框里输入一段代码,来一个Java版本的HelloWorld吧  
+        public class HelloWorld {  
+      
+          /**  
+          * @param args  
+       */  
+       public static void main(String[] args) {  
+       System.out.println("HelloWorld!");  
+      
+       }  
+      
+        }  
+    ### 链接  
+    1.[点击这里你可以链接到www.google.com](http://www.google.com)<br />  
+    2.[点击这里我你可以链接到我的博客](http://guoyunsky.iteye.com)<br />  
+      
+    ###只是显示图片  
+    ![github](http://github.com/unicorn.png "github")  
+      
+    ###想点击某个图片进入一个网页,比如我想点击github的icorn然后再进入www.github.com  
+    [![image]](http://www.github.com/)  
+    [image]: http://github.com/github.png "github"  
+      
+    ### 文字被些字符包围  
+    > 文字被些字符包围  
+    >  
+    > 只要再文字前面加上>空格即可  
+    >  
+    > 如果你要换行的话,新起一行,输入>空格即可,后面不接文字  
+    > 但> 只能放在行首才有效  
+      
+    ### 文字被些字符包围,多重包围  
+    > 文字被些字符包围开始  
+    >  
+    > > 只要再文字前面加上>空格即可  
+    >  
+    >  > > 如果你要换行的话,新起一行,输入>空格即可,后面不接文字  
+    >  
+    > > > > 但> 只能放在行首才有效  
+      
+    ### 特殊字符处理  
+    有一些特殊字符如<,#等,只要在特殊字符前面加上转义字符\即可<br />  
+    你想换行的话其实可以直接用html标签\<br /\>  
