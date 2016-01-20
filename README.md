@@ -4,7 +4,7 @@ use python,rabbitmq,multiprocessing,casperjs for crawling<br/>
 程序主要用来获取国际快递物流信息,<br/>
 用到技术：rabbitmq,casperjs,multiprocessing<br/>
 解决问题：<br/>
-	1. 分布式爬虫
+	1. 分布式爬虫<br>
 	2. casperjs可以模拟浏览器获取数据,解决js加载数据,普通模块request获取不到的问题<br/>
 	3. multiprocessing可以利用多核<br/>
 	
@@ -12,14 +12,14 @@ use python,rabbitmq,multiprocessing,casperjs for crawling<br/>
 为方便查看,修改了,这里用txt和excel<br/>
 
 安装：<br/>
-	#install casperjs test on ubuntu 14.04
-	#casperjs 1.1.0 phantomjs 1.9.0
-	sudo apt-eget install phantomjs 
-	$ git clone git://github.com/n1k0/casperjs.git
-	$ cd casperjs
-	$ ln -sf `pwd`/bin/casperjs /usr/local/bin/casperjs
-	sudo pip install xlrd,xlwt
-	sudo apt-get install rabbitmq-server
+	`#install casperjs test on ubuntu 14.04`
+	`#casperjs 1.1.0 phantomjs 1.9.0`
+	`sudo apt-eget install phantomjs` 
+	`$ git clone git://github.com/n1k0/casperjs.git`
+	`$ cd casperjs`
+	`$ ln -sf `pwd`/bin/casperjs /usr/local/bin/casperjs`
+	`sudo pip install xlrd,xlwt`
+	`sudo apt-get install rabbitmq-server`
 
 使用：<br/>
 	1.python receive_data.py  为rabbitmq消费者,用来接受和处理数据
