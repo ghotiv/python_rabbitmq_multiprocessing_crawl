@@ -1,17 +1,16 @@
 # python_rabbitmq_multiprocessing_crawl
-use python,rabbitmq,multiprocessing,casperjs for crawling<br/>
 
 to get the intenational logistics information
 
-###main skills：
+###main skills
 
     rabbitmq,casperjs,multiprocessing
     
-###解决问题：<br/>
+###advantages
 
-    1. 分布式爬虫
-    2. casperjs可以模拟浏览器获取数据,解决js加载数据,普通模块request获取不到的问题
-    3. multiprocessing可以利用多核
+    1.distributed crawler
+    2.casperjs can get the webpage load with js
+    3.multiprocessing can use the Multi core CPU 
     
 最初是利用xmlrpc读取和写入数据到openerp（数据库,postgresql）<br/>
 为方便查看,修改了,这里用txt和excel<br/>
@@ -47,11 +46,14 @@ to get the intenational logistics information
 	some_code.py       :    写过的一些函数片段
 	
 
-文档说明：<br/>
-	sample_import.xls      为测试源数据
-	error_data_***.txt      为出错数据
-	success_data_***.txt  为获取成功数据
-	track_***.log                处理数据日志
+###some file usage
 
-要做的：<br/>
-	程序可以部署到网站上，导入快递基本信息excel后，输出快递详细信息的excel
+      sample_import.xls      为测试源数据
+      error_data_***.txt      为出错数据
+      success_data_***.txt  为获取成功数据
+      track_***.log                处理数据日志
+
+###to do
+
+      can use with the websiete
+      import excel about logistics number and export excel about logistics detail
