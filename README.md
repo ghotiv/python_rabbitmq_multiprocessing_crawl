@@ -4,9 +4,9 @@ use python,rabbitmq,multiprocessing,casperjs for crawling<br/>
 程序主要用来获取国际快递物流信息,<br/>
 用到技术：rabbitmq,casperjs,multiprocessing<br/>
 解决问题：<br/>
-	1. 分布式爬虫<br>
-	2. casperjs可以模拟浏览器获取数据,解决js加载数据,普通模块request获取不到的问题<br/>
-	3. multiprocessing可以利用多核<br/>
+    1. 分布式爬虫
+    2. casperjs可以模拟浏览器获取数据,解决js加载数据,普通模块request获取不到的问题<br/>
+    3. multiprocessing可以利用多核<br/>
 	
 最初是利用xmlrpc读取和写入数据到openerp（数据库,postgresql）<br/>
 为方便查看,修改了,这里用txt和excel<br/>
