@@ -1,8 +1,12 @@
 # python_rabbitmq_multiprocessing_crawl
 use python,rabbitmq,multiprocessing,casperjs for crawling<br/>
 
-程序主要用来获取国际快递物流信息,<br/>
-用到技术：rabbitmq,casperjs,multiprocessing<br/>
+to get the intenational logistics information
+
+#main skills：
+
+    rabbitmq,casperjs,multiprocessing
+    
 解决问题：<br/>
 
     1. 分布式爬虫
