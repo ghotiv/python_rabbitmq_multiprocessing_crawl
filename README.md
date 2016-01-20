@@ -11,9 +11,11 @@ to get the intenational logistics information
     1.distributed crawler
     2.casperjs can get the webpage load with js
     3.multiprocessing can use the Multi core CPU 
-    
-最初是利用xmlrpc读取和写入数据到openerp（数据库,postgresql）<br/>
-为方便查看,修改了,这里用txt和excel<br/>
+
+###motive
+
+    The project can be used in openerp (database: postgresql) with xmlrpc first
+    To use in general, alter it with excel
 
 ###install
 
@@ -58,5 +60,5 @@ to get the intenational logistics information
 
 ###to do
 
-      can use with the websiete
+      can use with the websiete,datebae:redis,mongodb and so on
       import excel about logistics number and export excel about logistics detail
