@@ -1,0 +1,2 @@
+{'url': u'http://www.17track.net/zh-cn/result/post.shtml?nums=RP331252387SG', 'logistic_sn': u'RP331252387SG', 'id': u'121103', 'error_reason': 'no_data', 'transfer_way': u'AMSG'}
+{'url': u'http://www.17track.net/zh-cn/track?fc=100001&nums=3655151651', 'logistic_sn': u'3655151651', 'id': u'118918', 'error_reason': 'no_data', 'transfer_way': u'DHL'}
