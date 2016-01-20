@@ -4,7 +4,7 @@ to get the intenational logistics information
 
 ###main skills
 
-    rabbitmq,casperjs,multiprocessing
+    rabbitmq,casperjs,multiprocessing,requests,python
     
 ###advantages
 
@@ -23,30 +23,30 @@ to get the intenational logistics information
     $ git clone git://github.com/n1k0/casperjs.git
     $ cd casperjs
     $ ln -sf `pwd`/bin/casperjs /usr/local/bin/casperjs
-    sudo pip install xlrd,xlwt
+    sudo pip install xlrd,xlwt,requests
     sudo apt-get install rabbitmq-server
 
 ###usage
 
-    1.python receive_data.py  为rabbitmq消费者,用来接受和处理数据
-    2.python send_data.py  读取快递单,运输商等信息列表; 
-    3.python save_to_excel.py 读取success_data_***.txt的有效数据保存在excel,track_result.xls
+    1.python receive_data.py  rabbitmq consumer,receive and do the data，can function on multi computer
+    2.python send_data.py  rabbitmq producer,read the logistics number and put to list
+    3.python save_to_excel.py reand success_data_***.txt and save to track_result.xls
 
 ###modles
 	
-    receive_data.py 为rabbitmq消费者,用来接受和处理数据，可以部署多台机器
-    send_data.py       ： 读取快递单,运输商等信息列表
-    save_to_excel.py ： 读取success_data_***.txt的有效数据保存在excel,track_result.xls
-    my_rabbitmq.py  ： rabbitmq 主函数，收发数据
-    do_track.py            :   使用requests和casperjs获取,然后解析数据,调用multiprocessing
-    track_data.py       ： 常用变量，读写excel
-    my_process_pool.py :  记录multiprocessing异常日志
-    read_excel.py       ： 读写excel
-    track.js                     :  capsperjs调用函数
-    rpc_api.py              ：xmlrpc对接openerp的api
-    ftp_up.py                 :  将获取的json数据文件上传到php服务器
-    test_excel.py          :   读取保存excel文件测试
-    some_code.py       :    写过的一些函数片段
+    receive_data.py :  rabbitmq consumer,receive and do the data，can function on multi computer
+    send_data.py    ： rabbitmq producer,read the logistics number and put to list
+    save_to_excel.py : reand success_data_***.txt and save to track_result.xls
+    my_rabbitmq.py  ： rabbitmq main function,send and receive data
+    do_track.py     : use requests and casperjs to get the webpage,and parse, use multiprocessing
+    track_data.py   ： basic variable,read and write excel
+    my_process_pool.py :  record multiprocessing exception
+    read_excel.py      :  read and write excel
+    track.js           :  capsperjs ues it to get webpage
+    rpc_api.py         :  xmlrpc api do with openerp
+    ftp_up.py          :  ftp up json file to php server
+    test_excel.py      :  test excel function
+    some_code.py       :  some code
 	
 
 ###some file
