@@ -267,3 +267,26 @@ class My_Thead:
             threads[i].start()
         for i in nloops:
             threads[i].join()
+
+
+def sum_list(dict_list,compare_arg,sum_arg):
+    from itertools import groupby
+    def compare(i):
+        return [ i[j] for j in compare_arg ]
+    def func_one(x,y):
+        for i in sum_arg:
+            x[i]=x[i]+y[i]
+        return x
+    return [reduce(func_one,k) for i, k in groupby(dict_list, compare)]
+
+a = [
+     {1:2,3:2,5:2,6:1,7:3,8:1},
+     {1:2,3:2,5:2,6:2,7:2,8:2},
+     {1:2,3:2,5:2,6:3,7:2,8:3},
+     {1:3,3:2,5:2,6:3,7:2,8:6},
+     {1:3,3:2,5:2,6:3,7:2,8:9},
+     ]
+print sum_list(a,[1,3,5],[6,7])
+
+#result
+#[{1: 2, 3: 2, 5: 2, 6: 6.0, 7: 7.0, 8: 1}, {1: 3, 3: 2, 5: 2, 6: 6.0, 7: 4.0, 8: 6}]  
