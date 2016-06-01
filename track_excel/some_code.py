@@ -305,5 +305,5 @@ a = [{'a':1,'s':5},{'a':2,'s':5},{'a':5,'s':5}]
 b = [{'a':1,'p':5},{'a':3,'p':5},{'a':5,'p':5}]
 c = [{'a':2,'t':5},{'a':3,'t':5},{'a':6,'t':5}]
 list_a = a+b+c
-print [reduce(lambda x,y: dict(x,**y),k) for i,k in groupby(sorted(list_a),lambda x:x['a'])]
+print [reduce(lambda x,y: dict(x,**y),k) for i,k in groupby(sorted(list_a,key=lambda x:x['a']),lambda x:x['a'])]
 #[{'a': 1, 'p': 5, 's': 5}, {'a': 2, 's': 5, 't': 5}, {'a': 3, 'p': 5, 't': 5}, {'a': 5, 'p': 5, 's': 5}, {'a': 6, 't': 5}]
