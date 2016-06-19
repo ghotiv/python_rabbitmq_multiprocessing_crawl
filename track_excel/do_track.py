@@ -103,12 +103,14 @@ def get_ck_event(tree, pattern, encoding='raw_unicode_escape'):
         return []
 
 
-def get_pattern_text(tree, pattern, encoding):
+def get_pattern_text(tree, pattern, encoding, attr=''):
     """get the node text of tree"""
     nodes = tree.xpath(pattern)
     if nodes:
         if len(nodes) == 1:
             text = etree.tostring(nodes[0], encoding=encoding, method='text')
+            if attr:
+                text = nodes[0].get(attr,'')
         if len(nodes) > 1:
             text = '\n'.join([etree.tostring(node,
                                              encoding=encoding,
