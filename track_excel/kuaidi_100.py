@@ -11,7 +11,8 @@ import json
 class KuaiDi100(object):
     '''
        get express number via kuaidi100
-       kuaidi_com:物流公司(zhongtong)，partnerId:月结账号
+       content important val:
+           kuaidi_com:物流公司(zhongtong)，partnerId:月结账号
     '''
     def __init__(self, key=None, secret=None):
         self.key = key
