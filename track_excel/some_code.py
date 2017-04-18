@@ -300,10 +300,21 @@ for i in b:
 #{1: [2, 3, 5], 2: [6]}
 
 ## dict_add
-from itertools import groupby
+from itertools import groupby,chain
 a = [{'a':1,'s':5},{'a':2,'s':5},{'a':5,'s':5}]
 b = [{'a':1,'p':5},{'a':3,'p':5},{'a':5,'p':5}]
 c = [{'a':2,'t':5},{'a':3,'t':5},{'a':6,'t':5}]
-list_a = a+b+c
-print [reduce(lambda x,y: dict(x,**y),k) for i,k in groupby(sorted(list_a,key=lambda x:x['a']),lambda x:x['a'])]
+print [reduce(lambda x,y: dict(x,**y),k) for i,k in groupby(sorted(chain(a+b+c),key=lambda x:x['a']),lambda x:x['a'])]
 #[{'a': 1, 'p': 5, 's': 5}, {'a': 2, 's': 5, 't': 5}, {'a': 3, 'p': 5, 't': 5}, {'a': 5, 'p': 5, 's': 5}, {'a': 6, 't': 5}]
+
+## left join
+from itertools import groupby,chain
+l1 = [{"a":1, "b":2,'d':1}, {"a":2, "b":3, 'd':6}, {"a":1, "b":3, 'd':5}]
+l2 = [{"a":1, 'b':2, "c":4}, {"a":2,'b':3,"c":3},{"a":5,'b':2,"c":5}]
+l3 = [{"a":2, 'b':4, "c":4}, {"a":2,'b':3,"c":3},{"a":5,'b':2,"c":5}]
+lia = [reduce(lambda x,y: dict(x,**y),k) for i,k in\
+groupby(sorted(chain(l1,l2,l3),key=lambda x:(x.get('a',None),x.get('b',None))),lambda x:(x.get('a',None),x.get('b',None)))\
+if i in [m for m,n in groupby(sorted(l1),lambda x:(x['a'],x['b']))]
+]
+#print lia
+#[{'a': 1, 'c': 4, 'b': 2, 'd': 1}, {'a': 1, 'b': 3, 'd': 5}, {'a': 2, 'c': 3, 'b': 3, 'd': 6}]
