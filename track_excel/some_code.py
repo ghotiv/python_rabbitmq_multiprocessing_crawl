@@ -315,7 +315,7 @@ l3 = [{'a':2, 'b':4, 'c':4}, {'a':2, 'b':3, 'c':3}, {'a':5, 'b':2, 'c':5}]
 l1_index_list = set([m for m,n in groupby(sorted(l1),lambda x:(x['a'],x['b']))])
 lia = [reduce(lambda x,y: dict(x,**y),k) for i,k in\
 groupby(sorted(chain(l1,l2,l3),key=lambda x:(x.get('a',None),x.get('b',None))),lambda x:(x.get('a',None),x.get('b',None)))\
-if i in l1_index_list
+if i in l1_index_list\
 ]
 #print lia
 #[{'a': 1, 'c': 4, 'b': 2, 'd': 1}, {'a': 1, 'b': 3, 'd': 5}, {'a': 2, 'c': 3, 'b': 3, 'd': 6}]
