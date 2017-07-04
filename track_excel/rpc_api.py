@@ -12,7 +12,6 @@ import logging
 from datetime import date
 DEBUG = False
 STR_TODAY = time.strftime("%Y-%m-%d", time.localtime())
-str_today = time.strftime("%Y-%m-%d", time.localtime())
 LOCAL_PATH = os.path.dirname(os.path.abspath(__file__))
 JSON_FILE_PATH = os.path.join(LOCAL_PATH, 'track_%s.json' % STR_TODAY)
 
